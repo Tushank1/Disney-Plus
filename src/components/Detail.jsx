@@ -17,11 +17,29 @@ function Detail() {
         />
       </Imagetitle>
       <Controls>
-        <PlayButton></PlayButton>
-        <TrailerButton></TrailerButton>
-        <AddButton></AddButton>
-        <GroupButton></GroupButton>
+        <PlayButton>
+          <img src="images/play-icon-black.png" alt="" />
+          <span>PLAY</span>
+        </PlayButton>
+        <TrailerButton>
+          <img src="images/play-icon-white.png" alt="" />
+          <span>Trailer</span>
+        </TrailerButton>
+        <AddButton>
+          <span>+</span>
+        </AddButton>
+        <GroupButton>
+          <img src="images/group-icon.png" alt="" />
+        </GroupButton>
       </Controls>
+      <SubTitle>
+        <Description>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus,
+          perspiciatis eius. Ipsa, autem dolor tenetur, voluptatum hic in
+          doloremque molestiae fugit atque consequatur facere laborum ut magnam.
+          Quibusdam, quisquam excepturi.
+        </Description>
+      </SubTitle>
     </Container>
   );
 }
@@ -51,6 +69,8 @@ const Background = styled.div`
 `;
 
 const Imagetitle = styled.div`
+  margin-top: 30px;
+  margin-left: 0px;
   height: 30vh;
   width: 35vw;
   min-height: 170px;
@@ -63,8 +83,63 @@ const Imagetitle = styled.div`
   }
 `;
 
-const Controls = styled.div``;
-const PlayButton = styled.button``;
-const TrailerButton = styled.button``;
-const AddButton = styled.button``;
-const GroupButton = styled.button``;
+const Controls = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const PlayButton = styled.button`
+  border-radius: 4px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  background-color: rgb(249, 249, 249);
+  padding: 0 24px;
+  margin-right: 24px;
+  letter-spacing: 1.8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(198, 198, 198);
+  }
+`;
+const TrailerButton = styled(PlayButton)`
+  background-color: rgb(0, 0, 0, 0.3);
+  border: 1px solid rgb(249, 249, 249);
+  color: rgb(249, 249, 249);
+  text-transform: uppercase;
+`;
+const AddButton = styled.button`
+  margin-right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+
+  span {
+    font-size: 30px;
+    color: white;
+  }
+`;
+const GroupButton = styled(AddButton)`
+  background-color: black;
+`;
+
+const SubTitle = styled.div`
+  color: rgb(249, 249, 249);
+  font-size: 15px;
+  min-height: 20px;
+  margin-top: 26px;
+`;
+const Description = styled.div`
+  line-height: 1.4;
+  font-size: 20px;
+  margin-top: 16px;
+  color: rgb(249, 249, 249);
+  max-width: 760px;
+`;
